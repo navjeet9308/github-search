@@ -1,0 +1,42 @@
+/* dashboard.component.scss */
+
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  
+    h2 {
+      color: #333;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+  
+    nav {
+      display: flex;
+      margin-top: 20px;
+  
+      a {
+        padding: 10px 20px;
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+  
+        &:hover {
+          color: #fff;
+          background-color: #007bff;
+        }
+  
+        &:not(:last-child) {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+  

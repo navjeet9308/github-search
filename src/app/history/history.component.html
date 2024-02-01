@@ -1,0 +1,33 @@
+<!-- history.component.html -->
+
+<div class="history-container">
+    <h2>Search History</h2>
+  
+    <div *ngIf="searchHistory$ | async as searchHistory; else loading">
+      <div *ngIf="searchHistory.length === 0">
+        <p>No search history available.</p>
+      </div>
+  
+      <div *ngFor="let historyItem of searchHistory" class="history-item">
+        <div *ngIf="historyItem.result; else noResult">
+          <div class="user-info">
+            <img src="{{ historyItem.result.avatar_url }}" alt="User Avatar" />
+            <div class="details">
+              <p><strong>Login:</strong> {{ historyItem.result.login }}</p>
+              <!-- Display additional result details as needed -->
+            </div>
+          </div>
+        </div>
+        <ng-template #noResult>
+          <p><strong>Result:</strong> No profile found</p>
+        </ng-template>
+      </div>
+    </div>
+  
+    <ng-template #loading>
+      <p>Loading...</p>
+    </ng-template>
+  
+    <button (click)="clearSearchHistory()">Clear History</button>
+  </div>
+  
